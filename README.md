@@ -21,12 +21,20 @@
 - 重点词组、逐条列表、圈画及箭头跟随口播出现。
 - 背景中心明亮，四角带柔和相机暗角；不加顶部栏目编号和底部装饰署名。
 
+## 默认配音
+
+- 模型：`eleven_v4`；音色：`5eoK8NqMBsMdqUmImHNs`。
+- 已确认 A 版“温柔清晰”：标准普通话、自然有感情，重音与语调服务句意。
+- 参数：`language_code=zh`、`stability=0.65`、`similarity_boost=0.8`；V4 不传 `speed`、`style` 或 SSML。
+- 直接复用已确认设置；先有正式配音，再按字词时间生成字幕和动画事件。原稿、展示稿与读法稿分开保存，整篇配音优先。
+- 配音后检查错漏和读法，修改音频后重新对齐；ASR 正确率不能证明主观自然度或每个声调准确。
+
 ## 安装到 Codex
 
 将本仓库放到技能目录，文件夹名保持为 `whiteboard-elevenlabs-hyperframes`：
 
 ```bash
-git clone https://github.com/wbin888/whiteboard-elevenlabs-hyperframes.git ~/.codex/skills/whiteboard-elevenlabs-hyperframes
+git clone https://github.com/wbin888/whiteboard-sb.git ~/.codex/skills/whiteboard-elevenlabs-hyperframes
 ```
 
 如果目标目录已存在，请先检查本地修改，再决定合并或更新。安装后重新打开 Codex 会话以发现技能。
@@ -53,6 +61,7 @@ git clone https://github.com/wbin888/whiteboard-elevenlabs-hyperframes.git ~/.co
 ## 文件
 
 - [SKILL.md](SKILL.md)：主流程与验收要求。
+- [配音与词级同步](references/voiceover-timing.md)：V4 A 版设置、读法、对齐与语义事件。
 - [画面制作规范](references/visual-production.md)：真人手、素描上色、字幕、字体与暗角。
 - [参考片分析](references/reference-analysis.md)：参考视频观察及分析边界。
 
